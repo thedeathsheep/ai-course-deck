@@ -1,32 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#F6F8FC"/>
-  <rect x="110" y="160" width="310" height="250" rx="28" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="2"/>
-  <rect x="450" y="160" width="310" height="250" rx="28" fill="#EAF1FF" stroke="#DCE4F1" stroke-width="2"/>
-  <rect x="790" y="160" width="310" height="250" rx="28" fill="#F1EEFF" stroke="#DCE4F1" stroke-width="2"/>
-  <rect x="1130" y="160" width="330" height="250" rx="28" fill="#FFF0F7" stroke="#DCE4F1" stroke-width="2"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBFDFF"/>
+      <stop offset="100%" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F7CFF"/>
+      <stop offset="100%" stop-color="#7BAFFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#6489D6" flood-opacity="0.14"/>
+    </filter>
+  </defs>
 
-  <g font-family="'Microsoft YaHei UI', sans-serif" fill="#162033">
-    <text x="148" y="230" font-size="34" font-weight="700">训练</text>
-    <text x="148" y="286" font-size="24">从大量文本、代码、图像中</text>
-    <text x="148" y="324" font-size="24">学习模式，决定它会“像什么”。</text>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="132" cy="130" r="150" fill="#E1ECFF"/>
+  <circle cx="1488" cy="126" r="140" fill="#DDF7F1"/>
 
-    <text x="488" y="230" font-size="34" font-weight="700">预测</text>
-    <text x="488" y="286" font-size="24">在当前上下文中预测</text>
-    <text x="488" y="324" font-size="24">下一段最可能合理的内容。</text>
+  <g filter="url(#shadow)">
+    <rect x="598" y="240" width="404" height="264" rx="42" fill="url(#core)"/>
+  </g>
+  <text x="660" y="344" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#FFFFFF">大模型</text>
+  <text x="660" y="394" font-family="'Microsoft YaHei UI', sans-serif" font-size="28" fill="#EEF5FF">它不是在“理解世界”，</text>
+  <text x="660" y="438" font-family="'Microsoft YaHei UI', sans-serif" font-size="28" fill="#EEF5FF">而是在上下文里生成</text>
+  <text x="660" y="482" font-family="'Microsoft YaHei UI', sans-serif" font-size="28" fill="#EEF5FF">高概率、看起来合理的结果。</text>
 
-    <text x="828" y="230" font-size="34" font-weight="700">上下文</text>
-    <text x="828" y="286" font-size="24">你提供的背景、示例、格式</text>
-    <text x="828" y="324" font-size="24">会直接改变输出轨道。</text>
-
-    <text x="1168" y="230" font-size="34" font-weight="700">工具</text>
-    <text x="1168" y="286" font-size="24">接入搜索、文档、代码、日历后，</text>
-    <text x="1168" y="324" font-size="24">语言能力才会变成动作能力。</text>
+  <g stroke="#D8E4FC" stroke-width="3" fill="none">
+    <path d="M598 332 C476 332, 424 286, 356 224"/>
+    <path d="M1002 332 C1126 332, 1178 286, 1248 224"/>
+    <path d="M598 414 C476 414, 424 470, 356 566"/>
+    <path d="M1002 414 C1126 414, 1178 470, 1248 566"/>
   </g>
 
-  <path d="M260 470 C 380 570, 610 570, 705 470" stroke="#5B8CFF" stroke-width="8" fill="none"/>
-  <path d="M600 470 C 720 570, 950 570, 1045 470" stroke="#7B61FF" stroke-width="8" fill="none"/>
-  <path d="M940 470 C 1060 570, 1310 570, 1395 470" stroke="#FF6FAE" stroke-width="8" fill="none"/>
+  <g font-family="'Microsoft YaHei UI', sans-serif">
+    <rect x="120" y="120" width="360" height="170" rx="28" fill="#FFFFFF" stroke="#D8E4FC" stroke-width="2"/>
+    <text x="156" y="188" font-size="32" font-weight="700" fill="#162033">训练</text>
+    <text x="156" y="236" font-size="24" fill="#5F7292">从大量文本、图片、代码里</text>
+    <text x="156" y="272" font-size="24" fill="#5F7292">学模式，形成“像什么”的倾向。</text>
 
-  <rect x="214" y="610" width="1172" height="92" rx="26" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="2"/>
-  <text x="256" y="668" font-family="'Microsoft YaHei UI', sans-serif" font-size="30" font-weight="700" fill="#162033">它不是像人一样理解世界，而是在当前上下文中生成高概率结果。</text>
+    <rect x="1120" y="120" width="360" height="170" rx="28" fill="#FFFFFF" stroke="#D8E4FC" stroke-width="2"/>
+    <text x="1156" y="188" font-size="32" font-weight="700" fill="#162033">预测</text>
+    <text x="1156" y="236" font-size="24" fill="#5F7292">在当前上下文中，持续预测</text>
+    <text x="1156" y="272" font-size="24" fill="#5F7292">下一段最可能成立的内容。</text>
+
+    <rect x="120" y="548" width="360" height="170" rx="28" fill="#FFFFFF" stroke="#D8E4FC" stroke-width="2"/>
+    <text x="156" y="616" font-size="32" font-weight="700" fill="#162033">上下文</text>
+    <text x="156" y="664" font-size="24" fill="#5F7292">你给它的背景、示例、格式，</text>
+    <text x="156" y="700" font-size="24" fill="#5F7292">会直接改变输出轨道。</text>
+
+    <rect x="1120" y="548" width="360" height="170" rx="28" fill="#FFFFFF" stroke="#D8E4FC" stroke-width="2"/>
+    <text x="1156" y="616" font-size="32" font-weight="700" fill="#162033">工具</text>
+    <text x="1156" y="664" font-size="24" fill="#5F7292">接入搜索、文档、网页和应用后，</text>
+    <text x="1156" y="700" font-size="24" fill="#5F7292">语言能力才会变成动作能力。</text>
+  </g>
+
+  <rect x="292" y="770" width="1016" height="76" rx="24" fill="#F4F8FF" stroke="#D8E4FC" stroke-width="2"/>
+  <text x="336" y="819" font-family="'Microsoft YaHei UI', sans-serif" font-size="28" font-weight="700" fill="#162033">
+    所以提示词不是玄学，它本质上是在补上下文、缩小歧义、提高生成命中率。
+  </text>
 </svg>

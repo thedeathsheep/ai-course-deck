@@ -1,0 +1,67 @@
+---
+import SourceStrip from "./SourceStrip.astro";
+
+interface Props {
+  entry: {
+    id: string;
+    data: {
+      title: string;
+      slug: string;
+      order: number;
+      section: string;
+      layoutType: string;
+      speakerNotes?: string;
+      sourceRefs?: string[];
+      heroAsset?: string;
+      demoLink?: { label: string; url: string };
+    };
+  };
+  Content: any;
+}
+
+const { entry, Content } = Astro.props;
+const { data } = entry;
+const hasAsset = Boolean(data.heroAsset);
+---
+
+<section
+  class={`deck-slide deck-slide--${data.layoutType} ${hasAsset ? "deck-slide--has-asset" : ""}`}
+  data-slide-id={entry.id}
+  data-slide-slug={data.slug}
+>
+  <div class="deck-slide__inner">
+    <div class="deck-slide__meta">
+      <span class="deck-slide__index">{String(data.order).padStart(2, "0")}</span>
+      <span class="deck-slide__section">{data.section}</span>
+    </div>
+
+    <div class="deck-slide__content">
+      <div class="deck-slide__copy">
+        <h1>{data.title}</h1>
+        <Content />
+        {
+          data.demoLink && (
+            <p class="demo-link">
+              <a href={data.demoLink.url} target="_blank" rel="noreferrer">
+                {data.demoLink.label}
+              </a>
+              <span>打开演示后可按 Alt+Tab 回到当前讲演页。</span>
+            </p>
+          )
+        }
+      </div>
+
+      {
+        hasAsset && (
+          <figure class="deck-slide__asset">
+            <img src={data.heroAsset} alt={data.title} loading="lazy" />
+          </figure>
+        )
+      }
+    </div>
+
+    <SourceStrip items={data.sourceRefs} />
+  </div>
+
+  {data.speakerNotes && <aside class="notes">{data.speakerNotes}</aside>}
+</section>

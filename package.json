@@ -4,10 +4,20 @@
   "private": true,
   "description": "Course materials and PPT generator for an AI literacy talk.",
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test tests/**/*.test.mjs",
+    "slides:audit": "node scripts/audit-slides-layout.mjs",
     "build:deck": "node scripts/build-course-deck-v2.js"
   },
   "dependencies": {
     "playwright": "^1.59.1",
     "pptxgenjs": "^3.12.0"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "^5.0.3",
+    "astro": "^6.1.3",
+    "reveal.js": "^6.0.0"
   }
 }

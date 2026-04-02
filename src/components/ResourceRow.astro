@@ -1,0 +1,39 @@
+---
+interface Props {
+  resource: {
+    id: string;
+    data: {
+      title: string;
+      summary: string;
+      sourceType: string;
+      regionAccess: string;
+      priority: string;
+      url: string;
+      relatedTags: string[];
+    };
+  };
+}
+
+const { resource } = Astro.props;
+const { data } = resource;
+---
+
+<article class="resource-row">
+  <div class="resource-row__lead">
+    <span class={`resource-row__priority priority-${data.priority.toLowerCase()}`}>{data.priority}</span>
+    <div>
+      <h3>
+        <a href={data.url} target="_blank" rel="noreferrer">{data.title}</a>
+      </h3>
+      <p>{data.summary}</p>
+    </div>
+  </div>
+
+  <div class="resource-row__meta">
+    <span>{data.sourceType}</span>
+    <span>{data.regionAccess}</span>
+    {data.relatedTags.map((tag) => (
+      <span class="resource-row__tag">{tag}</span>
+    ))}
+  </div>
+</article>

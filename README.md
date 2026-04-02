@@ -1,31 +1,51 @@
 # AI Course Deck
 
-An AI literacy slide deck for general workplace audiences, focused on:
+This repo now contains two delivery formats for the same AI literacy talk:
 
-- what AI is
-- how LLMs work
-- why hallucinations happen
-- product landscape and tool selection
-- prompting, prompt chains, and practical workflows
-- real workplace and life use cases
+- a static web presentation at `/slides/`
+- a curated resource library at `/resources/`
+- the legacy PPT generation workflow for offline deck export
+
+The web version is designed for long-form, in-person delivery and uses real screenshots, report figures, product icons, and citation strips instead of placeholder slide chrome.
 
 ## Project Structure
 
-- `scripts/build-course-deck-v2.js`: PPT generator
-- `materials/ai-cognition-course-v2.pptx`: current generated deck
-- `materials/*.md`: supporting outlines and speaker materials
-- `assets/diagrams`: custom SVG diagrams used in the slides
-- `assets/reports`: report PDFs and extracted evidence images
-- `assets/research`: supporting reference screenshots
-- `assets/screens`: product screenshots
+- `src/pages/slides/index.astro`: Reveal.js talk deck
+- `src/pages/resources/index.astro`: curated post-session resource site
+- `src/content/slides/*.mdx`: slide content entries
+- `src/content/resources/*.mdx`: curated resource entries
+- `src/content.config.ts`: Astro content collections schema
+- `src/lib/site-data.mjs`: sorting and grouping helpers used by both pages
+- `assets/`: static public assets, including screenshots, diagrams, reports, and icons
+- `materials/`: legacy PPT, notes, and supporting markdown handouts
+- `scripts/build-course-deck-v2.js`: legacy PPT generator
 
-## Build
+## Run The Site
 
 ```bash
 npm install
+npm run dev
+```
+
+Open:
+
+- `http://localhost:4321/slides/`
+- `http://localhost:4321/resources/`
+
+## Build For Deployment
+
+```bash
+npm run build
+```
+
+The static output is written to `dist/` and can be uploaded directly to a standard web server.
+
+## Legacy PPT Build
+
+```bash
 npm run build:deck
 ```
 
-The generated deck is written to:
+The generated PPT is written to:
 
 `materials/ai-cognition-course-v2.pptx`
