@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F6F8FC"/>
+  <rect x="72" y="96" width="1456" height="708" rx="28" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="2"/>
+  <rect x="120" y="210" width="180" height="430" rx="20" fill="#F0F3F8"/>
+  <rect x="324" y="210" width="490" height="430" rx="20" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="2"/>
+  <rect x="840" y="210" width="640" height="430" rx="20" fill="#EAF1FF" stroke="#DCE4F1" stroke-width="2"/>
+
+  <text x="150" y="270" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#62708B">维度</text>
+  <text x="356" y="270" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#162033">搜索</text>
+  <text x="874" y="270" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#5B8CFF">AI</text>
+
+  <g font-family="'Microsoft YaHei UI', sans-serif" font-size="26" fill="#162033">
+    <text x="150" y="340" font-weight="700" fill="#62708B">核心目标</text>
+    <text x="356" y="340">找到已有信息</text>
+    <text x="874" y="340">完成任务，先产出一个可修改版本</text>
+
+    <text x="150" y="416" font-weight="700" fill="#62708B">输入方式</text>
+    <text x="356" y="416">关键词</text>
+    <text x="874" y="416">目标、背景、约束、格式、示例</text>
+
+    <text x="150" y="492" font-weight="700" fill="#62708B">输出形态</text>
+    <text x="356" y="492">链接、网页、文档列表</text>
+    <text x="874" y="492">草稿、结构、方案、脚本、代码</text>
+
+    <text x="150" y="568" font-weight="700" fill="#62708B">人的角色</text>
+    <text x="356" y="568">阅读、筛选、整合</text>
+    <text x="874" y="568">定义任务、纠偏、比较、判断</text>
+  </g>
+
+  <rect x="580" y="690" width="442" height="64" rx="18" fill="#FFF0F7"/>
+  <text x="611" y="732" font-family="'Microsoft YaHei UI', sans-serif" font-size="28" font-weight="700" fill="#162033">一句话：搜索更像资料入口，AI 更像任务接口</text>
+</svg>

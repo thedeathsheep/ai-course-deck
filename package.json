@@ -1,0 +1,13 @@
+{
+  "name": "ai-course-materials",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Course materials and PPT generator for an AI literacy talk.",
+  "scripts": {
+    "build:deck": "node scripts/build-course-deck-v2.js"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "pptxgenjs": "^3.12.0"
+  }
+}

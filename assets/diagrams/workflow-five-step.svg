@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F6F8FC"/>
+  <g font-family="'Microsoft YaHei UI', sans-serif" fill="#162033">
+    <circle cx="206" cy="320" r="64" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="4"/>
+    <text x="187" y="330" font-size="34" font-weight="700">1</text>
+    <text x="126" y="440" font-size="32" font-weight="700">定义任务</text>
+    <text x="110" y="486" font-size="22" fill="#62708B">目标、对象、限制</text>
+
+    <circle cx="496" cy="320" r="64" fill="#EAF1FF" stroke="#DCE4F1" stroke-width="4"/>
+    <text x="477" y="330" font-size="34" font-weight="700">2</text>
+    <text x="430" y="440" font-size="32" font-weight="700">给上下文</text>
+    <text x="414" y="486" font-size="22" fill="#62708B">材料、示例、背景</text>
+
+    <circle cx="786" cy="320" r="64" fill="#F1EEFF" stroke="#DCE4F1" stroke-width="4"/>
+    <text x="767" y="330" font-size="34" font-weight="700">3</text>
+    <text x="736" y="440" font-size="32" font-weight="700">出首版</text>
+    <text x="694" y="486" font-size="22" fill="#62708B">先拿一个能工作的版本</text>
+
+    <circle cx="1076" cy="320" r="64" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="4"/>
+    <text x="1057" y="330" font-size="34" font-weight="700">4</text>
+    <text x="994" y="440" font-size="32" font-weight="700">追问迭代</text>
+    <text x="960" y="486" font-size="22" fill="#62708B">比较、压缩、改写、追问</text>
+
+    <circle cx="1366" cy="320" r="64" fill="#FFF0F7" stroke="#DCE4F1" stroke-width="4"/>
+    <text x="1347" y="330" font-size="34" font-weight="700">5</text>
+    <text x="1290" y="440" font-size="32" font-weight="700">核验落地</text>
+    <text x="1240" y="486" font-size="22" fill="#62708B">查事实、试使用、做修改</text>
+  </g>
+
+  <path d="M270 320 H 432" stroke="#7B61FF" stroke-width="8"/>
+  <polygon points="432,320 406,304 406,336" fill="#7B61FF"/>
+  <path d="M560 320 H 722" stroke="#7B61FF" stroke-width="8"/>
+  <polygon points="722,320 696,304 696,336" fill="#7B61FF"/>
+  <path d="M850 320 H 1012" stroke="#7B61FF" stroke-width="8"/>
+  <polygon points="1012,320 986,304 986,336" fill="#7B61FF"/>
+  <path d="M1140 320 H 1302" stroke="#FF6FAE" stroke-width="8"/>
+  <polygon points="1302,320 1276,304 1276,336" fill="#FF6FAE"/>
+</svg>

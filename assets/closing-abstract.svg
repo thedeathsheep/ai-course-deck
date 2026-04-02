@@ -1,0 +1,35 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="120" y1="100" x2="1360" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10141F"/>
+      <stop offset="1" stop-color="#171B29"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="370" y1="515" x2="1205" y2="515" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F7FF" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#F5F7FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6C91FF" stop-opacity="0.24"/>
+    </linearGradient>
+    <linearGradient id="selected" x1="964" y1="214" x2="1360" y2="666" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6FAE"/>
+      <stop offset="1" stop-color="#FF6FAE" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <circle cx="1184" cy="452" r="316" fill="#262E45" fill-opacity="0.52"/>
+
+  <path d="M887 146C952 252 998 340 1048 430C1101 526 1168 595 1292 677" stroke="url(#selected)" stroke-width="92" stroke-linecap="round"/>
+  <path d="M290 519H1180" stroke="url(#beam)" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M392 325C576 410 729 476 880 519" stroke="#F5F7FF" stroke-opacity="0.16" stroke-width="20" stroke-linecap="round"/>
+  <path d="M332 463C552 506 732 514 878 519" stroke="#F5F7FF" stroke-opacity="0.22" stroke-width="20" stroke-linecap="round"/>
+  <path d="M374 617C554 570 716 538 879 519" stroke="#7B61FF" stroke-opacity="0.28" stroke-width="20" stroke-linecap="round"/>
+
+  <circle cx="894" cy="519" r="34" fill="#F5F7FF"/>
+  <circle cx="1098" cy="502" r="18" fill="#6C91FF"/>
+  <circle cx="1207" cy="576" r="22" fill="#FF6FAE"/>
+
+  <rect x="1034" y="264" width="220" height="88" rx="24" fill="#F5F7FF" fill-opacity="0.08" stroke="#F5F7FF" stroke-opacity="0.24"/>
+  <rect x="1172" y="474" width="238" height="96" rx="24" fill="#F5F7FF" fill-opacity="0.06" stroke="#F5F7FF" stroke-opacity="0.18"/>
+  <rect x="1048" y="633" width="202" height="86" rx="24" fill="#7B61FF" fill-opacity="0.08" stroke="#7B61FF" stroke-opacity="0.26"/>
+</svg>

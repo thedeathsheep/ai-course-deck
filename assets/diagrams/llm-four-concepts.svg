@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F6F8FC"/>
+  <rect x="110" y="160" width="310" height="250" rx="28" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="2"/>
+  <rect x="450" y="160" width="310" height="250" rx="28" fill="#EAF1FF" stroke="#DCE4F1" stroke-width="2"/>
+  <rect x="790" y="160" width="310" height="250" rx="28" fill="#F1EEFF" stroke="#DCE4F1" stroke-width="2"/>
+  <rect x="1130" y="160" width="330" height="250" rx="28" fill="#FFF0F7" stroke="#DCE4F1" stroke-width="2"/>
+
+  <g font-family="'Microsoft YaHei UI', sans-serif" fill="#162033">
+    <text x="148" y="230" font-size="34" font-weight="700">训练</text>
+    <text x="148" y="286" font-size="24">从大量文本、代码、图像中</text>
+    <text x="148" y="324" font-size="24">学习模式，决定它会“像什么”。</text>
+
+    <text x="488" y="230" font-size="34" font-weight="700">预测</text>
+    <text x="488" y="286" font-size="24">在当前上下文中预测</text>
+    <text x="488" y="324" font-size="24">下一段最可能合理的内容。</text>
+
+    <text x="828" y="230" font-size="34" font-weight="700">上下文</text>
+    <text x="828" y="286" font-size="24">你提供的背景、示例、格式</text>
+    <text x="828" y="324" font-size="24">会直接改变输出轨道。</text>
+
+    <text x="1168" y="230" font-size="34" font-weight="700">工具</text>
+    <text x="1168" y="286" font-size="24">接入搜索、文档、代码、日历后，</text>
+    <text x="1168" y="324" font-size="24">语言能力才会变成动作能力。</text>
+  </g>
+
+  <path d="M260 470 C 380 570, 610 570, 705 470" stroke="#5B8CFF" stroke-width="8" fill="none"/>
+  <path d="M600 470 C 720 570, 950 570, 1045 470" stroke="#7B61FF" stroke-width="8" fill="none"/>
+  <path d="M940 470 C 1060 570, 1310 570, 1395 470" stroke="#FF6FAE" stroke-width="8" fill="none"/>
+
+  <rect x="214" y="610" width="1172" height="92" rx="26" fill="#FFFFFF" stroke="#DCE4F1" stroke-width="2"/>
+  <text x="256" y="668" font-family="'Microsoft YaHei UI', sans-serif" font-size="30" font-weight="700" fill="#162033">它不是像人一样理解世界，而是在当前上下文中生成高概率结果。</text>
+</svg>
