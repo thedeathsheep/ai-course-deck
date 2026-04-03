@@ -29,6 +29,11 @@ const hasAsset = Boolean(data.heroAsset);
   data-slide-id={entry.id}
   data-slide-slug={data.slug}
 >
+  <div class="deck-slide__backdrop" aria-hidden="true">
+    <span class="deck-slide__glow deck-slide__glow--a"></span>
+    <span class="deck-slide__glow deck-slide__glow--b"></span>
+    <span class="deck-slide__grid"></span>
+  </div>
   <div class="deck-slide__inner">
     <div class="deck-slide__meta">
       <span class="deck-slide__index">{String(data.order).padStart(2, "0")}</span>
