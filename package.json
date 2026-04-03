@@ -1,23 +1,26 @@
 {
-  "name": "ai-course-materials",
+  "name": "ai-course-web-slides",
   "version": "1.0.0",
   "private": true,
-  "description": "Course materials and PPT generator for an AI literacy talk.",
+  "description": "Native React/Vite web slide deck for an AI literacy talk.",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "node --test tests/**/*.test.mjs",
-    "slides:audit": "node scripts/audit-slides-layout.mjs",
-    "build:deck": "node scripts/build-course-deck-v2.js"
+    "check": "npm run build",
+    "slides:audit": "node scripts/audit-web-slides.mjs",
+    "export:pptx": "node scripts/export-web-to-pptx.mjs",
+    "export:figma": "node scripts/export-web-to-figma-migration.mjs"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@vitejs/plugin-react": "^6.0.1",
     "playwright": "^1.59.1",
-    "pptxgenjs": "^3.12.0"
-  },
-  "devDependencies": {
-    "@astrojs/mdx": "^5.0.3",
-    "astro": "^6.1.3",
-    "reveal.js": "^6.0.0"
+    "pptxgenjs": "^3.12.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.3"
   }
 }

@@ -1,26 +1,12 @@
-# AI Course Deck
+# AI Course Web Slides
 
-This repo now contains two delivery formats for the same AI literacy talk:
+This repository now runs as a native React + Vite slide deck for an AI literacy talk.
 
-- a static web presentation at `/slides/`
-- a curated resource library at `/resources/`
-- the legacy PPT generation workflow for offline deck export
+The main surface is:
 
-The web version is designed for long-form, in-person delivery and uses real screenshots, report figures, product icons, and citation strips instead of placeholder slide chrome.
+- `/slides/`: the live presentation
 
-## Project Structure
-
-- `src/pages/slides/index.astro`: Reveal.js talk deck
-- `src/pages/resources/index.astro`: curated post-session resource site
-- `src/content/slides/*.mdx`: slide content entries
-- `src/content/resources/*.mdx`: curated resource entries
-- `src/content.config.ts`: Astro content collections schema
-- `src/lib/site-data.mjs`: sorting and grouping helpers used by both pages
-- `assets/`: static public assets, including screenshots, diagrams, reports, and icons
-- `materials/`: legacy PPT, notes, and supporting markdown handouts
-- `scripts/build-course-deck-v2.js`: legacy PPT generator
-
-## Run The Site
+## Quick Start
 
 ```bash
 npm install
@@ -29,23 +15,37 @@ npm run dev
 
 Open:
 
-- `http://localhost:4321/slides/`
-- `http://localhost:4321/resources/`
+- `http://127.0.0.1:5173/slides/`
 
-## Build For Deployment
+## Commands
 
 ```bash
+npm run dev
 npm run build
+npm run preview
+npm run test
+npm run check
+npm run slides:audit -- http://127.0.0.1:5173/slides/
+npm run export:pptx -- http://127.0.0.1:5173/slides/
 ```
 
-The static output is written to `dist/` and can be uploaded directly to a standard web server.
+`npm run build` writes the production bundle to `dist/`.
 
-## Legacy PPT Build
+## Project Map
 
-```bash
-npm run build:deck
-```
+- `slides/index.html`: deck entry route
+- `src/slides/App.jsx`: all slide composition and presentation runtime
+- `src/slides/main.jsx`: React bootstrap
+- `src/slides/index.css`: global deck theme, stage, shared visual primitives
+- `scripts/audit-web-slides.mjs`: browser-based layout audit
+- `scripts/export-web-to-pptx.mjs`: screenshot-based PPTX export
+- `assets/`: screenshots, report images, diagrams, and other deck assets
+- `materials/`: exported presentation artifacts
 
-The generated PPT is written to:
+## Maintenance Loop
 
-`materials/ai-cognition-course-v2.pptx`
+1. Edit slide content and structure in `src/slides/App.jsx`.
+2. Adjust shared visuals in `src/slides/index.css`.
+3. Run `npm run test`.
+4. Run `npm run build`.
+5. Run `npm run slides:audit -- http://127.0.0.1:5173/slides/` against a local dev server when layout changes are substantial.
