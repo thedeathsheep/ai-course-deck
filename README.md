@@ -1,26 +1,15 @@
-# AI Course Deck
+# AI Course Web Slides
 
-This repo now contains two delivery formats for the same AI literacy talk:
+This repository is organized around a static web presentation for an AI literacy talk.
 
-- a static web presentation at `/slides/`
-- a curated resource library at `/resources/`
-- the legacy PPT generation workflow for offline deck export
+The main deliverables are:
 
-The web version is designed for long-form, in-person delivery and uses real screenshots, report figures, product icons, and citation strips instead of placeholder slide chrome.
+- `/slides/`: the live talk deck built with Astro and Reveal.js
+- `/resources/`: a curated post-session resource library
 
-## Project Structure
+The site is optimized for in-person delivery and keeps real screenshots, report figures, product marks, and citation strips in the final experience instead of placeholder slide chrome.
 
-- `src/pages/slides/index.astro`: Reveal.js talk deck
-- `src/pages/resources/index.astro`: curated post-session resource site
-- `src/content/slides/*.mdx`: slide content entries
-- `src/content/resources/*.mdx`: curated resource entries
-- `src/content.config.ts`: Astro content collections schema
-- `src/lib/site-data.mjs`: sorting and grouping helpers used by both pages
-- `assets/`: static public assets, including screenshots, diagrams, reports, and icons
-- `materials/`: legacy PPT, notes, and supporting markdown handouts
-- `scripts/build-course-deck-v2.js`: legacy PPT generator
-
-## Run The Site
+## Quick Start
 
 ```bash
 npm install
@@ -32,20 +21,40 @@ Open:
 - `http://localhost:4321/slides/`
 - `http://localhost:4321/resources/`
 
-## Build For Deployment
+## Commands
 
 ```bash
+npm run dev
 npm run build
+npm run preview
+npm run test
+npm run check
+npm run slides:audit -- http://127.0.0.1:4321/slides/
 ```
 
-The static output is written to `dist/` and can be uploaded directly to a standard web server.
+`npm run build` writes the static site to `dist/`.
 
-## Legacy PPT Build
+## Project Map
 
-```bash
-npm run build:deck
-```
+- `src/pages/slides/index.astro`: Reveal.js deck shell
+- `src/pages/resources/index.astro`: resource library page
+- `src/content/slides/*.mdx`: slide content and frontmatter
+- `src/content/resources/*.mdx`: resource entries and metadata
+- `src/components/`: slide and resource rendering primitives
+- `src/lib/site-data.mjs`: ordering and grouping helpers
+- `src/styles/`: global, slide, and resource styles
+- `assets/`: public screenshots, diagrams, icons, reports, and runtime assets
+- `docs/slides-tuning.md`: layout tuning notes for the deck
+- `docs/web-project-map.md`: editing guide for the web slide site
 
-The generated PPT is written to:
+## Editing Workflow
 
-`materials/ai-cognition-course-v2.pptx`
+1. Update slide copy or metadata in `src/content/slides/*.mdx`.
+2. Update resource cards in `src/content/resources/*.mdx`.
+3. Adjust shared layout and visual rules in `src/components/` and `src/styles/`.
+4. Run `npm run test` for data helpers.
+5. Run `npm run build` before shipping.
+
+## Legacy Files
+
+The repository still contains PPT-era source material in `materials/` and the old generator in `scripts/build-course-deck-v2.js`, but they are retained only as reference material and are no longer the primary project surface.
