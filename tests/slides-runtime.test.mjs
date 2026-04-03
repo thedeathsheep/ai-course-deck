@@ -2,10 +2,20 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-test("slides page uses a bundled runtime script instead of bare module imports", () => {
-  const file = fs.readFileSync("src/pages/slides/index.astro", "utf8");
+test("slides bootstrap imports App and shared deck styles", () => {
+  const file = fs.readFileSync("src/slides/main.jsx", "utf8");
 
-  assert.match(file, /<script type="module" src="\/slides-runtime\.js"><\/script>/);
-  assert.doesNotMatch(file, /import Reveal from "reveal\.js"/);
-  assert.doesNotMatch(file, /import RevealNotes from "reveal\.js\/plugin\/notes"/);
+  assert.match(file, /import App from "\.\/App\.jsx";/);
+  assert.match(file, /import "\.\/index\.css";/);
+  assert.match(file, /ReactDOM\.createRoot\(document\.getElementById\("app"\)\)\.render/);
+});
+
+test("package scripts point at the active Vite workflow", () => {
+  const file = fs.readFileSync("package.json", "utf8");
+
+  assert.match(file, /"dev": "vite"/);
+  assert.match(file, /"build": "vite build"/);
+  assert.match(file, /"slides:audit": "node scripts\/audit-web-slides\.mjs"/);
+  assert.match(file, /"export:pptx": "node scripts\/export-web-to-pptx\.mjs"/);
+  assert.doesNotMatch(file, /build-course-deck-v2/);
 });

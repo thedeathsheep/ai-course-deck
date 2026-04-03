@@ -481,55 +481,52 @@ function SlideWhyNow() {
     <SlideFrame>
       <div className="relative flex h-full flex-col">
         <div className="deck-kicker">Why Now</div>
-        <div className="mt-5 grid flex-1 grid-cols-[0.9fr_1.1fr] gap-12">
+        <div className="mt-5 grid flex-1 grid-cols-[0.92fr_1.08fr] gap-12">
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="deck-display text-[clamp(3rem,5vw,5.2rem)] leading-[0.9]">AI 已进入真实工作流</h2>
               <p className="mt-4 max-w-[30rem] text-[1.06rem] leading-8 text-white/66">
-                这不是一句泛化判断，而是一个正在发生的组织变化。越来越多工作已经转成“先定义任务，再让系统协助完成”的方式展开。
+                对普通听众来说，最重要的不是记住哪家公司又发了什么模型，而是看到一件更现实的事:
+                越来越多的工作，已经从“我自己从零做完”转成“我先定义任务，再让系统协助推进”。
               </p>
             </div>
 
-            <div>
-              <div className="text-[7.4rem] font-semibold leading-none tracking-[-0.08em] text-white">43%</div>
-              <div className="mt-2 text-lg text-white/80">知识工作者表示 AI 已进入他们的工作任务</div>
-              <div className="mt-8 flex items-end gap-10">
-                <div>
-                  <div className="text-[3.2rem] font-semibold leading-none tracking-[-0.06em] text-[#b8adff]">78%</div>
-                  <div className="mt-2 text-sm leading-6 text-white/56">组织层面已经把 AI 用在至少一个业务环节</div>
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                ["43%", "知识工作者表示 AI 已进入自己的任务处理环节。"],
+                ["78%", "组织层面已经在至少一个业务流程中接入生成式 AI。"],
+                ["71%", "管理者预期 AI 会改变岗位分工和工作方式。"],
+              ].map(([value, body], index) => (
+                <div key={value} className="deck-stat-card">
+                  <div className={`text-[2.7rem] font-semibold leading-none tracking-[-0.06em] ${index === 0 ? "text-[#5d72d8]" : index === 1 ? "text-[#70a8c8]" : "text-[#d68ea3]"}`}>
+                    {value}
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-white/58">{body}</p>
                 </div>
-                <div>
-                  <div className="text-[3.2rem] font-semibold leading-none tracking-[-0.06em] text-[#7fd5ff]">71%</div>
-                  <div className="mt-2 text-sm leading-6 text-white/56">高管判断生成式 AI 会重塑工作方式和岗位结构</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center">
-            <div className="absolute left-[16%] top-[14%] h-44 w-44 rounded-full bg-[#7c6cff]/28 blur-[90px]" />
-            <div className="absolute right-[14%] bottom-[16%] h-40 w-40 rounded-full bg-[#ef4f96]/20 blur-[80px]" />
+          <div className="grid h-full grid-rows-[1.06fr_0.7fr_auto] gap-4">
+            <figure className="deck-shot-card">
+              <img src="/research/openai-work-report.png" alt="OpenAI work report chart" className="h-[16.5rem] w-full object-cover object-top" />
+              <figcaption>报告图表先回答“变化是否正在发生”，再进入解释。这一页的重点是用证据支持判断，而不是营造科技感。</figcaption>
+            </figure>
 
-            <div className="relative h-[78%] w-full">
-              <img
-                src="/reports/pages/openai-report-p6.png"
-                alt="OpenAI work report"
-                className="absolute left-[6%] top-[12%] w-[44%] rotate-[-8deg] rounded-[1.6rem] border border-white/10 shadow-2xl"
-              />
-              <img
-                src="/reports/pages/openai-report-p11.png"
-                alt="OpenAI work report"
-                className="absolute right-[2%] top-[2%] w-[42%] rotate-[7deg] rounded-[1.6rem] border border-white/10 shadow-2xl"
-              />
-              <img
-                src="/research/openai-work-report.png"
-                alt="OpenAI report chart"
-                className="absolute bottom-[0%] left-[26%] w-[46%] rotate-[-2deg] rounded-[1.4rem] border border-white/10 shadow-2xl"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <figure className="deck-shot-card">
+                <img src="/reports/pages/openai-report-p6.png" alt="OpenAI report page" className="h-[11.2rem] w-full object-cover object-top" />
+                <figcaption>组织与岗位开始把 AI 放进真实流程。</figcaption>
+              </figure>
+              <figure className="deck-shot-card">
+                <img src="/reports/pages/openai-report-p11.png" alt="OpenAI report page" className="h-[11.2rem] w-full object-cover object-top" />
+                <figcaption>管理者更关心“它会如何改写分工”。</figcaption>
+              </figure>
+            </div>
 
-              <div className="absolute bottom-[-2%] left-[2%] max-w-[18rem] border-t border-white/10 pt-4 text-sm leading-6 text-white/56">
-                报告截图不是装饰，而是证据的可视化。演示的可信度，来自真实材料和清晰解读，而不是空泛的“AI 很重要”。
-              </div>
+            <div className="deck-soft-panel rounded-[1.5rem] px-6 py-5 text-sm leading-7 text-white/58">
+              这一页想给听众建立一个更稳的判断:
+              生成式 AI 不是离我们很远的未来技术，它已经在文档整理、方案初稿、信息汇总、会议纪要、搜索研究等任务里，成为“先跑第一轮”的常见助手。
             </div>
           </div>
         </div>
@@ -1104,11 +1101,11 @@ function SlideGlobalInterfaces() {
 
             <div className="space-y-5">
               {[
-                ["ChatGPT", "最典型的通用 AI 助手入口，覆盖写作、问答、分析与多模态。"],
-                ["Claude", "在长文、结构化写作和温和交互体验上有明显辨识度。"],
-                ["Gemini / DeepSeek", "分别代表大厂生态入口和高性价比推理入口。"],
+                ["看界面，而不是先背榜单", "普通用户实际接触到 AI，通常是一个聊天框、若干推荐任务和可直接点击的工具按钮。"],
+                ["看它最擅长帮你做什么", "有人擅长综合问答，有人更适合长文写作，有人擅长搜索与整理。入口不同，使用习惯也会不同。"],
+                ["看它能不能进入你的日常", "真正长期留下来的，不是“参数最强”的那个，而是最方便被你高频打开的那个。"],
               ].map(([title, body]) => (
-                <div key={title} className="border-l border-white/12 pl-5">
+                <div key={title} className="deck-soft-panel rounded-[1.35rem] px-5 py-5">
                   <div className="text-base font-medium text-white">{title}</div>
                   <div className="mt-1 text-sm leading-6 text-white/56">{body}</div>
                 </div>
@@ -1116,11 +1113,21 @@ function SlideGlobalInterfaces() {
             </div>
           </div>
 
-          <div className="relative h-full">
-            <img src="/screens/chatgpt-overview.png" alt="ChatGPT" className="absolute left-[4%] top-[18%] w-[32%] rotate-[-6deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
-            <img src="/screens/claude-home.png" alt="Claude" className="absolute left-[28%] top-[4%] w-[34%] rotate-[2deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
-            <img src="/screens/gemini-overview.png" alt="Gemini" className="absolute right-[2%] top-[12%] w-[32%] rotate-[8deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
-            <img src="/screens/deepseek-home.png" alt="DeepSeek" className="absolute left-[34%] bottom-[2%] w-[32%] rotate-[-3deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
+          <div className="grid h-full grid-cols-2 gap-4">
+            {[
+              ["ChatGPT", "/screens/chatgpt-overview.png", "通用型入口，适合大多数人的第一站。"],
+              ["Claude", "/screens/claude-home.png", "长文阅读、结构化整理、温和交互体验更突出。"],
+              ["Gemini", "/screens/gemini-overview.png", "和 Google 生态衔接更自然，适合搜索与多模态混合场景。"],
+              ["DeepSeek", "/screens/deepseek-home.png", "高性价比推理入口，近两年让很多用户第一次认真用起 AI。"],
+            ].map(([title, src, body]) => (
+              <figure key={title} className="deck-shot-card">
+                <img src={src} alt={title} className="h-[12.8rem] w-full object-cover object-top" />
+                <figcaption>
+                  <strong className="mr-2 text-[0.95rem] text-white">{title}</strong>
+                  {body}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </div>
@@ -1134,28 +1141,38 @@ function SlideChinaInterfaces() {
       <div className="relative flex h-full flex-col">
         <div className="deck-kicker">China Surface</div>
         <div className="mt-5 grid flex-1 grid-cols-[1.14fr_0.86fr] gap-12">
-          <div className="relative h-full">
-            <img src="/screens/doubao-home.png" alt="Doubao" className="absolute left-[0%] top-[12%] w-[30%] rotate-[-7deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
-            <img src="/screens/kimi-home.png" alt="Kimi" className="absolute left-[25%] top-[0%] w-[32%] rotate-[3deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
-            <img src="/screens/yuanbao-home.png" alt="Yuanbao" className="absolute right-[10%] top-[14%] w-[28%] rotate-[8deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
-            <img src="/screens/qwen-home.png" alt="Qwen" className="absolute left-[22%] bottom-[0%] w-[34%] rotate-[-2deg] rounded-[1.3rem] border border-white/10 shadow-2xl" />
+          <div className="grid h-full grid-cols-2 gap-4">
+            {[
+              ["豆包", "/screens/doubao-home.png", "更像面向大众的日常入口，很多人第一次尝试 AI 就从这里开始。"],
+              ["Kimi", "/screens/kimi-home.png", "资料阅读、联网总结、长文本处理，在认知里辨识度很高。"],
+              ["元宝", "/screens/yuanbao-home.png", "依托大厂生态，更容易在熟悉的产品环境里被看见。"],
+              ["通义", "/screens/qwen-home.png", "既是聊天入口，也是企业与开发场景的重要基础能力来源。"],
+            ].map(([title, src, body]) => (
+              <figure key={title} className="deck-shot-card">
+                <img src={src} alt={title} className="h-[12.6rem] w-full object-cover object-top" />
+                <figcaption>
+                  <strong className="mr-2 text-[0.95rem] text-white">{title}</strong>
+                  {body}
+                </figcaption>
+              </figure>
+            ))}
           </div>
 
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="deck-display text-[clamp(3rem,5vw,5rem)] leading-[0.9]">国内用户真正常见的入口</h2>
               <p className="mt-5 max-w-[28rem] text-[1.06rem] leading-8 text-white/66">
-                对很多听众来说，AI 不是抽象概念，而是豆包、Kimi、元宝、通义这类已经能在手机和浏览器里直接打开的入口。认知应该从真实界面开始，而不是从榜单开始。
+                面向大众讲 AI，不能只展示海外产品名。很多人真正会遇到的，就是豆包、Kimi、元宝、通义这类已经能在手机和浏览器里直接打开的入口。
               </p>
             </div>
 
             <div className="space-y-5">
               {[
-                ["更低门槛", "入口越像日常应用，越容易被普通用户拿来做第一轮尝试。"],
+                ["更低门槛", "入口越像熟悉的应用，越容易被普通用户用来做第一次尝试。"],
                 ["更高频场景", "搜索、总结、写作、翻译、资料整合，会是最先发生的高频用法。"],
-                ["更真实的扩散路径", "一门面向大众的课，必须从他们实际会遇到的界面讲起。"],
+                ["更真实的扩散路径", "真正适合大众的讲法，必须从他们会打开什么界面开始，而不是从排行榜开始。"],
               ].map(([title, body]) => (
-                <div key={title} className="border-l border-white/12 pl-5">
+                <div key={title} className="deck-soft-panel rounded-[1.35rem] px-5 py-5">
                   <div className="text-base font-medium text-white">{title}</div>
                   <div className="mt-1 text-sm leading-6 text-white/56">{body}</div>
                 </div>
@@ -1303,34 +1320,55 @@ function SlideWorkLifeSurface() {
   return (
     <SlideFrame>
       <div className="relative flex h-full flex-col">
-        <div className="deck-kicker">Scenarios</div>
+        <div className="deck-kicker">Life Surface</div>
         <div className="mt-5 flex items-end justify-between gap-10">
           <div>
             <h2 className="deck-display text-[clamp(3rem,5vw,5rem)] leading-[0.9]">AI 的价值不只在办公桌上</h2>
             <p className="mt-4 max-w-[38rem] text-[1.06rem] leading-8 text-white/66">
-              这门课不希望听众把 AI 理解成纯办公自动化工具。它也正在进入学习、生活、陪伴、决策和创意场景。
+              如果听众只把 AI 理解成“写周报、做汇报的工具”，认知会非常窄。它更像一种新的认知协作方式，正在同时进入工作、学习和日常生活。
             </p>
           </div>
         </div>
 
         <div className="mt-10 grid flex-1 grid-cols-2 gap-12">
-          <div className="flex flex-col justify-center">
-            <div className="text-xs uppercase tracking-[0.26em] text-[#aab6ff]">工作场景</div>
-            <div className="mt-6 space-y-6">
-              {["会议纪要整理为结论与待办", "长文与报告快速摘要、改写", "从空白页到 PPT / 方案初稿", "让一份资料先变成可用输出"].map((item) => (
-                <div key={item} className="text-[1.3rem] leading-8 text-white/84">{item}</div>
+          <div className="deck-soft-panel rounded-[2rem] px-7 py-7">
+            <div className="text-xs uppercase tracking-[0.26em] text-[#6881aa]">工作场景</div>
+            <div className="mt-6 grid gap-4">
+              {[
+                ["会议之后", "把一小时讨论快速整理成结论、待办和责任人。"],
+                ["资料处理", "先对长文、报告、政策、研究做摘要、改写和重点提取。"],
+                ["从零到一", "把一个空白问题先拉出结构、提纲、PPT 或方案初稿。"],
+                ["多方案比较", "同一问题快速生成几个备选答案，再由人做选择。"],
+              ].map(([title, body]) => (
+                <div key={title} className="deck-scene-card">
+                  <h3 className="text-[1.26rem] font-medium tracking-[-0.03em]">{title}</h3>
+                  <p className="mt-3 text-[0.98rem] leading-7">{body}</p>
+                </div>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col justify-center border-l border-white/10 pl-12">
-            <div className="text-xs uppercase tracking-[0.26em] text-[#f6b7d8]">工作之外</div>
-            <div className="mt-6 space-y-6">
-              {["旅行规划与路线安排", "学习陌生概念与制定路径", "健身、饮食与日常计划", "多方案决策与兴趣探索"].map((item) => (
-                <div key={item} className="text-[1.3rem] leading-8 text-white/82">{item}</div>
+          <div className="deck-soft-panel rounded-[2rem] px-7 py-7">
+            <div className="text-xs uppercase tracking-[0.26em] text-[#c48aa1]">工作之外</div>
+            <div className="mt-6 grid gap-4">
+              {[
+                ["学习新东西", "把陌生概念解释成自己能听懂的话，再生成学习路线。"],
+                ["生活规划", "旅行路线、健身饮食、家庭安排，都可以先让 AI 给出草案。"],
+                ["日常决策", "面对多个选择时，先让它帮你列出利弊和比较维度。"],
+                ["兴趣与创意", "写文案、做脚本、想标题、做灵感扩展，都能先借它打开思路。"],
+              ].map(([title, body]) => (
+                <div key={title} className="deck-scene-card">
+                  <h3 className="text-[1.26rem] font-medium tracking-[-0.03em]">{title}</h3>
+                  <p className="mt-3 text-[0.98rem] leading-7">{body}</p>
+                </div>
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="mt-5 text-sm leading-7 text-white/58">
+          更适合大众的表达不是“AI 还有很多能力”，而是让人看见:
+          它已经在真实的小任务里，悄悄改变我们获取信息、整理想法、做出选择和开始行动的方式。
         </div>
       </div>
     </SlideFrame>
@@ -1430,8 +1468,8 @@ function DeckChrome({ currentSlide, navOpen, setNavOpen, goToSlide }) {
     <>
       <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between px-[clamp(1.5rem,2.8vw,3rem)] py-[clamp(1rem,2vh,1.5rem)]">
         <div className="deck-pill pointer-events-auto inline-flex items-center gap-3 rounded-full px-4 py-2 text-[0.72rem] uppercase tracking-[0.24em] text-white/62">
-          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#8a75ff] shadow-[0_0_14px_rgba(124,108,255,0.85)]" />
-          Native Web Slides
+          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#6f83de] shadow-[0_0_10px_rgba(111,131,222,0.28)]" />
+          AI Cognition Deck
         </div>
 
         <div className="pointer-events-auto flex items-center gap-3">
@@ -1449,7 +1487,7 @@ function DeckChrome({ currentSlide, navOpen, setNavOpen, goToSlide }) {
       </header>
 
       {navOpen && (
-        <aside className="absolute right-[clamp(1.5rem,2.8vw,3rem)] top-[5.4rem] z-40 w-[22rem] rounded-[2rem] border border-white/10 bg-[rgba(8,10,18,0.92)] p-5 shadow-2xl backdrop-blur-2xl">
+        <aside className="absolute right-[clamp(1.5rem,2.8vw,3rem)] top-[5.4rem] z-40 w-[22rem] rounded-[2rem] border border-white/10 bg-[rgba(255,255,255,0.88)] p-5 shadow-[0_28px_60px_rgba(120,142,164,0.18)] backdrop-blur-2xl">
           <div className="mb-4 text-xs uppercase tracking-[0.28em] text-white/40">Jump To</div>
           <div className="space-y-2">
             {slideDeck.map((slide, index) => (
@@ -1458,7 +1496,7 @@ function DeckChrome({ currentSlide, navOpen, setNavOpen, goToSlide }) {
                 type="button"
                 onClick={() => goToSlide(index)}
                 className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left transition ${
-                  currentSlide === index ? "bg-white/10 text-white" : "bg-transparent text-white/58 hover:bg-white/5"
+                  currentSlide === index ? "bg-white/20 text-white" : "bg-transparent text-white/58 hover:bg-white/10"
                 }`}
               >
                 <span>
@@ -1480,7 +1518,7 @@ function DeckChrome({ currentSlide, navOpen, setNavOpen, goToSlide }) {
             <span>{slideDeck[currentSlide].title}</span>
           </div>
 
-          <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-black/24 px-3 py-2 backdrop-blur-xl">
+          <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-white/24 px-3 py-2 backdrop-blur-xl">
             {slideDeck.map((slide, index) => (
               <button
                 key={slide.id}
@@ -1488,7 +1526,7 @@ function DeckChrome({ currentSlide, navOpen, setNavOpen, goToSlide }) {
                 onClick={() => goToSlide(index)}
                 aria-label={`跳转到第 ${index + 1} 页`}
                 className={`deck-progress-dot ${
-                  currentSlide === index ? "scale-125 bg-white opacity-100" : "bg-white/28 opacity-60 hover:opacity-100"
+                  currentSlide === index ? "scale-125 bg-[#6f83de] opacity-100" : "bg-[#93a3b8] opacity-60 hover:opacity-100"
                 }`}
               />
             ))}
@@ -1511,7 +1549,6 @@ function DeckChrome({ currentSlide, navOpen, setNavOpen, goToSlide }) {
     </>
   );
 }
-
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(() => getSlideIndexFromHash(slideDeck.length));
   const [navOpen, setNavOpen] = useState(false);

@@ -1,13 +1,10 @@
 # AI Course Web Slides
 
-This repository is organized around a static web presentation for an AI literacy talk.
+This repository now runs as a native React + Vite slide deck for an AI literacy talk.
 
-The main deliverables are:
+The main surface is:
 
-- `/slides/`: the live talk deck built with Astro and Reveal.js
-- `/resources/`: a curated post-session resource library
-
-The site is optimized for in-person delivery and keeps real screenshots, report figures, product marks, and citation strips in the final experience instead of placeholder slide chrome.
+- `/slides/`: the live presentation
 
 ## Quick Start
 
@@ -18,8 +15,7 @@ npm run dev
 
 Open:
 
-- `http://localhost:4321/slides/`
-- `http://localhost:4321/resources/`
+- `http://127.0.0.1:5173/slides/`
 
 ## Commands
 
@@ -29,32 +25,27 @@ npm run build
 npm run preview
 npm run test
 npm run check
-npm run slides:audit -- http://127.0.0.1:4321/slides/
+npm run slides:audit -- http://127.0.0.1:5173/slides/
+npm run export:pptx -- http://127.0.0.1:5173/slides/
 ```
 
-`npm run build` writes the static site to `dist/`.
+`npm run build` writes the production bundle to `dist/`.
 
 ## Project Map
 
-- `src/pages/slides/index.astro`: Reveal.js deck shell
-- `src/pages/resources/index.astro`: resource library page
-- `src/content/slides/*.mdx`: slide content and frontmatter
-- `src/content/resources/*.mdx`: resource entries and metadata
-- `src/components/`: slide and resource rendering primitives
-- `src/lib/site-data.mjs`: ordering and grouping helpers
-- `src/styles/`: global, slide, and resource styles
-- `assets/`: public screenshots, diagrams, icons, reports, and runtime assets
-- `docs/slides-tuning.md`: layout tuning notes for the deck
-- `docs/web-project-map.md`: editing guide for the web slide site
+- `slides/index.html`: deck entry route
+- `src/slides/App.jsx`: all slide composition and presentation runtime
+- `src/slides/main.jsx`: React bootstrap
+- `src/slides/index.css`: global deck theme, stage, shared visual primitives
+- `scripts/audit-web-slides.mjs`: browser-based layout audit
+- `scripts/export-web-to-pptx.mjs`: screenshot-based PPTX export
+- `assets/`: screenshots, report images, diagrams, and other deck assets
+- `materials/`: exported presentation artifacts
 
-## Editing Workflow
+## Maintenance Loop
 
-1. Update slide copy or metadata in `src/content/slides/*.mdx`.
-2. Update resource cards in `src/content/resources/*.mdx`.
-3. Adjust shared layout and visual rules in `src/components/` and `src/styles/`.
-4. Run `npm run test` for data helpers.
-5. Run `npm run build` before shipping.
-
-## Legacy Files
-
-The repository still contains PPT-era source material in `materials/` and the old generator in `scripts/build-course-deck-v2.js`, but they are retained only as reference material and are no longer the primary project surface.
+1. Edit slide content and structure in `src/slides/App.jsx`.
+2. Adjust shared visuals in `src/slides/index.css`.
+3. Run `npm run test`.
+4. Run `npm run build`.
+5. Run `npm run slides:audit -- http://127.0.0.1:5173/slides/` against a local dev server when layout changes are substantial.

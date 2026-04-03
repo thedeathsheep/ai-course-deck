@@ -2,76 +2,50 @@
 
 ## What This Repo Is
 
-This is an Astro-based presentation site with two public surfaces:
+This is a Vite-based presentation project with one primary public surface:
 
-- `/slides/` for the live talk
-- `/resources/` for follow-up learning material
+- `/slides/` for the live talk deck
 
 ## Where To Edit
 
-### Content
+### Slides
 
-- `src/content/slides/*.mdx`
-  - One file per slide
-  - Frontmatter controls order, section, layout type, assets, citations, and optional demo links
-- `src/content/resources/*.mdx`
-  - One file per resource entry
-  - Frontmatter controls category, priority, source type, access notes, and tags
+- `src/slides/App.jsx`
+  - Main slide list, slide components, navigation chrome, and runtime behavior
+- `src/slides/main.jsx`
+  - React entry
+- `src/slides/index.css`
+  - Shared theme, stage shell, materials, and motion
 
-### Rendering
+### Entry HTML
 
-- `src/pages/slides/index.astro`
-  - Loads slide entries, renders them in order, and builds section navigation
-- `src/pages/resources/index.astro`
-  - Groups resources and renders the library landing page
-- `src/components/SlideFrame.astro`
-  - Shared slide wrapper, metadata rail, hero asset slot, notes, and source strip
-- `src/components/ResourceRow.astro`
-  - Shared resource row presentation
-- `src/components/SourceStrip.astro`
-  - Footer citations for slides
+- `index.html`
+  - Redirects the root path to `/slides/`
+- `slides/index.html`
+  - Mount point for the deck
 
-### Data Helpers
+### Scripts
 
-- `src/content.config.ts`
-  - Schema for slide and resource frontmatter
-- `src/lib/site-data.mjs`
-  - Sorting and grouping logic shared across pages
+- `scripts/audit-web-slides.mjs`
+  - Browser audit for stage presence and viewport overflow
+- `scripts/export-web-to-pptx.mjs`
+  - Screenshot-based PPTX export from the live deck
 
-### Styles
-
-- `src/styles/global.css`
-  - Shared page-level rules
-- `src/styles/slides.css`
-  - Main slide system
-- `src/styles/slides-tokens.css`
-  - Slide design tokens and tuning values
-- `src/styles/slides-overrides.css`
-  - Safe place for targeted slide overrides
-- `src/styles/resources.css`
-  - Resource library visuals
-
-### Public Assets
+### Assets
 
 - `assets/screens/`
-  - Product screenshots and visual references
-- `assets/brands/`
-  - Brand marks used in cards and diagrams
-- `assets/diagrams/`
-  - Supporting SVG diagrams
+  - Product UI screenshots
 - `assets/reports/`
-  - Report PDFs and extracted evidence figures
-- `assets/slides-runtime.js`
-  - Client-side Reveal runtime and keyboard interactions
+  - Report pages and figures
+- `assets/research/`
+  - Research visuals used in slides
+- `assets/diagrams/`
+  - Supporting SVG assets
 
 ## Suggested Maintenance Loop
 
-1. Edit MDX content first.
-2. Adjust styles only when content changes cannot solve the issue cleanly.
+1. Edit the deck in `src/slides/App.jsx`.
+2. Adjust shared visuals in `src/slides/index.css`.
 3. Run `npm run test`.
 4. Run `npm run build`.
-5. If layout changed, run `npm run slides:audit -- http://127.0.0.1:4321/slides/` against a local dev server.
-
-## Legacy Surface
-
-`materials/` and `scripts/build-course-deck-v2.js` are still present for historical reference, but current work should treat the web slide site as the source of truth.
+5. Run `npm run slides:audit -- http://127.0.0.1:5173/slides/` after structural or layout-heavy changes.

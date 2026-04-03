@@ -33,7 +33,7 @@ await page.addStyleTag({
   content: `
     body {
       margin: 0 !important;
-      background: #05060d !important;
+      background: #edf2f5 !important;
     }
 
     .deck-pill,
@@ -79,12 +79,10 @@ for (let index = 0; index < slideCount; index += 1) {
     `${String(index + 1).padStart(2, "0")}-${slug.replace(/[^a-z0-9-]/gi, "_")}.png`,
   );
 
-  await page.locator(".deck-stage").screenshot({
-    path: imagePath,
-  });
+  await page.locator(".deck-stage").screenshot({ path: imagePath });
 
   const slide = deck.addSlide();
-  slide.background = { color: "05060D" };
+  slide.background = { color: "EDF2F5" };
   slide.addImage({
     path: imagePath,
     x: 0,
