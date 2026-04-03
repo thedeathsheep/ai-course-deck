@@ -102,3 +102,273 @@
 .deck-slide[data-slide-slug="resources-closing"] .deck-slide__copy {
   max-width: 900px;
 }
+
+.deck-slide[data-slide-slug="search-vs-ai"] {
+  --slide-title-size: clamp(2rem, 3vw, 3.3rem);
+  --slide-title-max: 980px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .deck-slide__copy {
+  max-width: 1220px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .lead {
+  max-width: 840px;
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 6px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 34px;
+  border: 1px solid rgba(79, 124, 255, 0.14);
+  box-shadow: 0 22px 54px rgba(70, 103, 168, 0.12);
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card--search {
+  background:
+    radial-gradient(circle at top left, rgba(152, 183, 255, 0.16), transparent 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(245, 249, 255, 0.96));
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card--search::before {
+  background: linear-gradient(90deg, rgba(123, 164, 255, 0.7), rgba(210, 224, 255, 0.18));
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card--ai {
+  background:
+    radial-gradient(circle at top right, rgba(79, 124, 255, 0.22), transparent 38%),
+    linear-gradient(180deg, rgba(241, 247, 255, 0.99), rgba(225, 236, 255, 0.97));
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card--ai::before {
+  background: linear-gradient(90deg, rgba(47, 94, 244, 0.94), rgba(125, 197, 255, 0.5));
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card__header {
+  display: grid;
+  gap: 8px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card__eyebrow {
+  display: inline-block;
+  color: var(--deck-accent-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card__header h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  line-height: 0.98;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-card__header p {
+  margin: 0;
+  color: var(--deck-muted);
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene,
+.deck-slide[data-slide-slug="search-vs-ai"] .task-scene {
+  display: grid;
+  gap: 14px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene__query,
+.deck-slide[data-slide-slug="search-vs-ai"] .task-flow,
+.deck-slide[data-slide-slug="search-vs-ai"] .task-output {
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(79, 124, 255, 0.1);
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene__query {
+  font-size: 1rem;
+  color: var(--deck-text);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene__links {
+  display: grid;
+  gap: 10px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene__links div {
+  position: relative;
+  padding: 13px 16px 13px 46px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(79, 124, 255, 0.08);
+  color: var(--deck-muted);
+  font-size: 0.95rem;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene__links div::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, rgba(95, 142, 255, 0.9), rgba(182, 210, 255, 0.9));
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .search-scene__footer {
+  padding-top: 4px;
+  color: var(--deck-text);
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-brief {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-brief span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(79, 124, 255, 0.12);
+  color: var(--deck-text);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-flow {
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--deck-accent-strong);
+  background: linear-gradient(160deg, rgba(79, 124, 255, 0.16), rgba(195, 226, 255, 0.2));
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-flow::before,
+.deck-slide[data-slide-slug="search-vs-ai"] .task-flow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  transform: translateX(-50%);
+  background: rgba(79, 124, 255, 0.32);
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-flow::before {
+  top: -18px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-flow::after {
+  bottom: -18px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-output strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--deck-text);
+  font-size: 1.24rem;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .task-output p {
+  margin: 0;
+  color: var(--deck-muted);
+  font-size: 0.92rem;
+  line-height: 1.48;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-shift {
+  align-self: center;
+  display: grid;
+  gap: 8px;
+  padding: 18px 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(235, 244, 255, 0.94));
+  border: 1px solid rgba(79, 124, 255, 0.12);
+  box-shadow: 0 16px 38px rgba(70, 103, 168, 0.1);
+  text-align: center;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-shift span {
+  color: var(--deck-muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-shift strong {
+  color: var(--deck-text);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-takeaways {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-takeaways > div {
+  min-height: 88px;
+  padding: 14px 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(79, 124, 255, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 34px rgba(70, 103, 168, 0.08);
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-takeaways strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--deck-text);
+  font-size: 1rem;
+}
+
+.deck-slide[data-slide-slug="search-vs-ai"] .paradigm-takeaways span {
+  color: var(--deck-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1100px) {
+  .deck-slide[data-slide-slug="search-vs-ai"] .paradigm-board,
+  .deck-slide[data-slide-slug="search-vs-ai"] .paradigm-takeaways {
+    grid-template-columns: 1fr;
+  }
+}
