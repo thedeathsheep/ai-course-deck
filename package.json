@@ -10,7 +10,8 @@
     "test": "node --test tests/**/*.test.mjs",
     "check": "npm run build",
     "slides:audit": "node scripts/audit-web-slides.mjs",
-    "export:pptx": "node scripts/export-web-to-pptx.mjs"
+    "export:pptx": "node scripts/export-web-to-pptx.mjs",
+    "export:figma": "node scripts/export-web-to-figma-migration.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
